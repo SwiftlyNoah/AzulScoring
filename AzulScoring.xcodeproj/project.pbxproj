@@ -11,14 +11,23 @@
 		142E15D727EDFE1300BF048D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142E15D627EDFE1300BF048D /* ContentView.swift */; };
 		142E15D927EDFE1500BF048D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142E15D827EDFE1500BF048D /* Assets.xcassets */; };
 		142E15DC27EDFE1500BF048D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142E15DB27EDFE1500BF048D /* Preview Assets.xcassets */; };
+		1467FF9B27F0977100579ED2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1467FF9A27F0977100579ED2 /* GoogleService-Info.plist */; };
+		1467FF9E27F0980E00579ED2 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1467FF9D27F0980E00579ED2 /* FirebaseDatabase */; };
+		1467FFA027F0983600579ED2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1467FF9F27F0983600579ED2 /* DatabaseManager.swift */; };
+		1467FFA227F0990500579ED2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1467FFA127F0990500579ED2 /* ViewModel.swift */; };
+		148C113A27F3416C000B206F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C113927F3416C000B206F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		142E15D127EDFE1300BF048D /* AzulScoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzulScoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		142E15D127EDFE1300BF048D /* Azul Scoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Azul Scoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		142E15D427EDFE1300BF048D /* AzulScoringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzulScoringApp.swift; sourceTree = "<group>"; };
 		142E15D627EDFE1300BF048D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		142E15D827EDFE1500BF048D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142E15DB27EDFE1500BF048D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1467FF9A27F0977100579ED2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1467FF9F27F0983600579ED2 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		1467FFA127F0990500579ED2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		148C113927F3416C000B206F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1467FF9E27F0980E00579ED2 /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +53,7 @@
 		142E15D227EDFE1300BF048D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				142E15D127EDFE1300BF048D /* AzulScoring.app */,
+				142E15D127EDFE1300BF048D /* Azul Scoring.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +61,12 @@
 		142E15D327EDFE1300BF048D /* AzulScoring */ = {
 			isa = PBXGroup;
 			children = (
+				1467FF9A27F0977100579ED2 /* GoogleService-Info.plist */,
 				142E15D427EDFE1300BF048D /* AzulScoringApp.swift */,
 				142E15D627EDFE1300BF048D /* ContentView.swift */,
+				1467FFA127F0990500579ED2 /* ViewModel.swift */,
+				1467FF9F27F0983600579ED2 /* DatabaseManager.swift */,
+				148C113927F3416C000B206F /* Extensions.swift */,
 				142E15D827EDFE1500BF048D /* Assets.xcassets */,
 				142E15DA27EDFE1500BF048D /* Preview Content */,
 			);
@@ -83,8 +97,11 @@
 			dependencies = (
 			);
 			name = AzulScoring;
+			packageProductDependencies = (
+				1467FF9D27F0980E00579ED2 /* FirebaseDatabase */,
+			);
 			productName = AzulScoring;
-			productReference = 142E15D127EDFE1300BF048D /* AzulScoring.app */;
+			productReference = 142E15D127EDFE1300BF048D /* Azul Scoring.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 142E15C827EDFE1300BF048D;
+			packageReferences = (
+				1467FF9C27F0980E00579ED2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 142E15D227EDFE1300BF048D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142E15DC27EDFE1500BF048D /* Preview Assets.xcassets in Resources */,
+				1467FF9B27F0977100579ED2 /* GoogleService-Info.plist in Resources */,
 				142E15D927EDFE1500BF048D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148C113A27F3416C000B206F /* Extensions.swift in Sources */,
 				142E15D727EDFE1300BF048D /* ContentView.swift in Sources */,
 				142E15D527EDFE1300BF048D /* AzulScoringApp.swift in Sources */,
+				1467FFA227F0990500579ED2 /* ViewModel.swift in Sources */,
+				1467FFA027F0983600579ED2 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,24 +293,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AzulScoring/Preview Content\"";
-				DEVELOPMENT_TEAM = 859DBKXQPY;
+				DEVELOPMENT_TEAM = RGM9JAFXFM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nobles.AzulScoring.AzulScoring;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NoahBrauner.AzulScoring;
+				PRODUCT_NAME = "Azul Scoring";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -298,24 +324,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AzulScoring/Preview Content\"";
-				DEVELOPMENT_TEAM = 859DBKXQPY;
+				DEVELOPMENT_TEAM = RGM9JAFXFM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nobles.AzulScoring.AzulScoring;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NoahBrauner.AzulScoring;
+				PRODUCT_NAME = "Azul Scoring";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -341,6 +369,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1467FF9C27F0980E00579ED2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1467FF9D27F0980E00579ED2 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1467FF9C27F0980E00579ED2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 142E15C927EDFE1300BF048D /* Project object */;
 }
