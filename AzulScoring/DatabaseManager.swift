@@ -7,6 +7,8 @@
 
 import Firebase
 
+let name = "Ilana"
+
 class DatabaseManager {
     static let shared = DatabaseManager()
     
@@ -14,23 +16,20 @@ class DatabaseManager {
     
     private let database = Database.database().reference()
     
-    public func updateSelf(turns: [Turn]) {
-        let turn = turns.last!
-        var bits = [Bit]()
-        for sqaure in turn.squares.flatMap({ $0 }) {
-            bits.append(Bit(rawValue: sqaure.placed ? 1 : 0)!)
+    public func updateSelf(currentBoard: [[Square]], score: Int, scoreWithBonuses: Int) {
+        var binaryString = ""
+        for sqaure in currentBoard.flatMap({ $0 }) {
+            binaryString.append(sqaure.placed ? "1" : "0")
         }
-        bits.append(contentsOf: Array(repeating: Bit(rawValue: 0)!, count: 3))
+                
         
-        bits.append(contentsOf: Array(Bit.bits(fromByte: UInt8(turn.penalty)).dropFirst(4)))
-        
-        let base64String = Data(Bit.bytes(fromBits: bits)).base64EncodedString()
-        
-        database.child("players/Noah/\(turns.count-1)").setValue(String(base64String.dropLast(2)))
-    }
-    
-    public func deleteTurn(turnNumber: Int) {
-        database.child("players/Noah/\(turnNumber)").removeValue()
+        database.child("players/\(name)").setValue(
+            [
+                "b" : binaryString,
+                "s": score,
+                "sb": scoreWithBonuses
+            ]
+        )
     }
     
     public func fetchGame(completion: @escaping ([Player]) -> Void) {

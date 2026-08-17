@@ -10,9 +10,9 @@ import SwiftUI
 class SquaresViewModel: ObservableObject {
     @Published var turns: [Turn] = turnsStartingArray {
         didSet {
-            DatabaseManager.shared.updateSelf(turns: turns)
             updateScores()
             updateBonuses()
+            DatabaseManager.shared.updateSelf(currentBoard: turns.last!.squares, score: totalScore, scoreWithBonuses: scoreWithBonuses)
         }
     }
     @Published var totalScore: Int = 0
@@ -113,9 +113,10 @@ class SquaresViewModel: ObservableObject {
         
         var allPatterns = ["Blue", "Yellow", "Red", "Black", "Flower"]
         
-        for i in 0...5 {
-            for j in 0...5 {
-                let square = turns[turns.count - 1].squares[i][j]
+        for i in 0...4 {
+            for j in 0...4 {
+                let turn = turns[turns.count - 1]
+                let square = turn.squares[i][j]
                 if !square.placed {
                     if let index = allPatterns.firstIndex(of: Square.getColor(x: i, y: j)) {
                         allPatterns.remove(at: index)
@@ -143,7 +144,6 @@ class SquaresViewModel: ObservableObject {
         }
         else {
             turns.removeLast()
-            db.deleteTurn(turnNumber: turns.count)
         }
     }
 }
